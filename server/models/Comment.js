@@ -20,4 +20,4 @@ const commentSchema = new Schema(
   }
 )
 
-module.exports = reactionSchema;
+module.exports = commentSchema;

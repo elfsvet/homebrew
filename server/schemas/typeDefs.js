@@ -35,4 +35,22 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-`
+
+  type Query{
+    me: User
+    users: [User]
+    user(username: String!): User
+    characters(username: String): [Character]
+    character(_id: ID!): Character
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    addCharacter(name: String!, bio: String!, strength: Int!, dexterity: Int!, constitution: Int!, intelligence: Int!, wisdom: Int!, charisma: Int!): Character
+    addComment(commentId: ID!, commentBody: String!): Character
+    addPartyMember(partyMemberId: ID!): User
+  }
+`;
+
+module.exports = typeDefs;
