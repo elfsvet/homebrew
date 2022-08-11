@@ -26,7 +26,7 @@ const userSchema = new Schema (
         ref: "Character"
       }
     ],
-    partymembers: [
+    partyMembers: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
@@ -56,7 +56,7 @@ userSchema.methods.isCorrectPassword = async function(password) {
 }
 
 userSchema.virtual('partyMemberCount').get(function() {
-  return this.partymembers.length
+  return this.partyMembers.length
 });
 
 const User = model('User', userSchema)
