@@ -9,6 +9,10 @@ const characterSchema = new Schema(
       minlength: 1,
       maxlength: 10
     },
+    bio: {
+      type: String,
+      maxlength: 500
+    },
     username: {
       type: String,
       required: true
