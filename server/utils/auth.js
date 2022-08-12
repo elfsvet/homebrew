@@ -10,7 +10,7 @@ module.exports = {
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 
-  authMiddleWare: function({ req }) {
+  authMiddleware: function({ req }) {
     // allows token to be sent via req.body/query/headers
     let token = req.body.token || req.query.token || req.headers.authorization;
 
