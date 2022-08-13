@@ -12,3 +12,7 @@
 .login-form {
     margin-top: 10rem;
 }
+
+.login-failed {
+    color: red;
+}
