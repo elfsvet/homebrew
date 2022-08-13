@@ -1,10 +1,12 @@
 import React from "react";
+import "../styles/signup.css";
+
 
 function Signup() {
   return (
-    <div className="">
+    <div className="signup-wrapper">
+      <form className="signup-form">
       <h2>Signup</h2>
-      <form>
         <label>
           <p>Username</p>
           <input type="text" />

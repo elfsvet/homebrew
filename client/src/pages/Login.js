@@ -3,9 +3,9 @@ import "../styles/login.css";
 
 function Login() {
   return (
-    <div className="">
+    <div className="login-wrapper">
+      <form className="login-form">
       <h2>Login</h2>
-      <form>
         <label>
           <p>Username</p>
           <input type="text" />

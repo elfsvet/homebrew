@@ -2,4 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('../assets/images/dndDice.jpeg');
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+.login-form {
+    margin-top: 10rem;
 }
