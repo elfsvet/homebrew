@@ -20,3 +20,9 @@
     font-size: 70px;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+  .socialMedia svg {
+    font-size: 50px;
+  }
+  }
