@@ -18,11 +18,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // connection to /graphql endpoint
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem('id_token');
   return {
     headers: {
       ...headers,

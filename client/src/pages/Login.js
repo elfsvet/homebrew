@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
-import "../styles/login.css";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
+
+import '../styles/login.css';
 
 function Login(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -17,7 +18,7 @@ function Login(props) {
     });
   };
 
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN);
 
   // submit form
   const handleFormSubmit = async (event) => {
@@ -32,21 +33,22 @@ function Login(props) {
     }
     // clear form values
     setFormState({
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     });
   };
 
   return (
-    <div className="login-wrapper">
-      <form className="login-form" onSubmit={handleFormSubmit}>
+    <div className='login-wrapper'>
+      <form className='login-form' onSubmit={handleFormSubmit}>
         <h2>Login</h2>
         <label>
           <p>Email</p>
           <input
-            type="email"
-            name="email"
-            id="email"
+            placeholder=''
+            type='email'
+            name='email'
+            id='email'
             value={formState.email}
             onChange={handleChange}
           />
@@ -54,18 +56,19 @@ function Login(props) {
         <label>
           <p>Password</p>
           <input
-            type="password"
-            name="password"
-            id="password"
+            placeholder=''
+            type='password'
+            name='password'
+            id='password'
             value={formState.password}
             onChange={handleChange}
           />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type='submit'>Submit</button>
         </div>
       </form>
-      {error && <div className="login-failed">Login failed!</div>}
+      {error && <div className='login-failed'>Login failed!</div>}
     </div>
   );
 }
