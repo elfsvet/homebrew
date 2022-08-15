@@ -1,0 +1,14 @@
+.home-wrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #211510;
+    background-image: url('../assets/images/homePage.png');
+    height: 100vh;
+    width: 99vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

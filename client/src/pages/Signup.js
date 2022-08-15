@@ -38,7 +38,7 @@ function Signup() {
   };
 
   return (
-    <div className="signup-wrapper">
+    <div className="signup-wrapper login-box">
       <form className="signup-form" onSubmit={handleFormSubmit}>
         <h2>Signup</h2>
         <label>
@@ -72,7 +72,13 @@ function Signup() {
           />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
         </div>
         {error && <div className="signup-failed">Sign up failed!</div>}
       </form>
