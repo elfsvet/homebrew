@@ -1,5 +1,4 @@
 import { setContext } from "@apollo/client/link/context";
-import "./App.css";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
@@ -15,6 +14,7 @@ import HomePage from "./pages/HomePage";
 import NewBuildPage from "./pages/NewBuildPage";
 import SignupPage from "./pages/SignupPage";
 import ProfilePage from "./pages/ProfilePage";
+import Footer from "./components/Footer"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,7 +51,7 @@ function App() {
             </Routes>
           </Container>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </ApolloProvider>
   );
