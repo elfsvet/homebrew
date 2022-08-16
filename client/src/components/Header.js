@@ -13,7 +13,7 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/login">Log in</Nav.Link>
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/signup">Sign up</Nav.Link>
             <Nav.Link as={Link} to="/newbuild">New Build</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
