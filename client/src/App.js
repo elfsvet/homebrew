@@ -2,16 +2,14 @@ import { setContext } from "@apollo/client/link/context";
 import "./App.css";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import LoginPage from "./pages/LoginPage";
 import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
-
-import Header from "./components/Header";
-import Homepage from "./pages/Homepage";
-import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 
 const httpLink = createHttpLink({
@@ -41,7 +39,6 @@ function App() {
         <main className="py-3">
           <Container>
             <Routes>
-              <Route path="/" element={<Homepage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
             </Routes>
