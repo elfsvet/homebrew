@@ -4,6 +4,7 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 import "./App.css";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
