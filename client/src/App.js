@@ -3,6 +3,7 @@ import './App.css';
 import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <main className='py-3'>
         <Container>
           <Routes>
-            {/* <Route path='/'element={<Header />}/> */}
+            <Route path='/login'element={<LoginPage />}/>
           </Routes>
         </Container>
       </main>
