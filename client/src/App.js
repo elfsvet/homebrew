@@ -15,6 +15,7 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+import SignupPage from './pages/SignupPage'
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,6 +47,7 @@ function App() {
 
           <Routes>
             <Route path='/login'element={<LoginPage />}/>
+            <Route path='/signup'element={<SignupPage />}/>
           </Routes>
 
         </Container>
