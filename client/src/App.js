@@ -1,15 +1,20 @@
+
+
+
+
+import { setContext } from '@apollo/client/link/context';
+import logo from './logo.svg';
+import './App.css';
+import { Container } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import LoginPage from './pages/LoginPage';
 import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
-import "./App.css";
-import { Container } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import Header from "./components/Header";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -30,6 +35,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -37,7 +43,11 @@ function App() {
       <Header />
       <main className="py-3">
         <Container>
-          <Routes>{/* <Route path='/'element={<Header />}/> */}</Routes>
+
+          <Routes>
+            <Route path='/login'element={<LoginPage />}/>
+          </Routes>
+
         </Container>
       </main>
       {/* <Footer /> */}
