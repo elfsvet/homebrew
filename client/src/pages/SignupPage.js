@@ -1,63 +1,97 @@
-import React from 'react'
-import { Button, Container, Row, Form, Col } from 'react-bootstrap'
-import FormContainer from '../components/FormContainer'
-import { Link } from 'react-router-dom';
+import React, {useState } from "react";
+import { Button, Container, Row, Form, Col } from "react-bootstrap";
+import FormContainer from "../components/FormContainer";
+import { Link } from "react-router-dom";
 
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const SignupPage = () => {
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // submit form
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    // use try/catch instead of promises to handle errors
+    try {
+       // execute addUser mutation and pass in variable data from form
+       const { data } = await addUser({
+        variables: { ...formState }
+       });
+       Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <FormContainer>
       <h1>Sign Up</h1>
-      <Form >
-        <Form.Group controlId='name'>
+      <Form onSubmit={handleFormSubmit}>
+        <Form.Group controlId="username">
           <Form.Label>Name</Form.Label>
           <Form.Control
-            type='name'
-            placeholder='Enter name'
-          
-            
+            name='username'
+            type="text"
+            placeholder="Enter name"
+            onChange={handleChange}
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='email'>
+        <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-            type='email'
-            placeholder='Enter email'
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            onChange={handleChange}
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Enter password'
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            onChange={handleChange}
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='confirmPassword'>
+        {/* <Form.Group controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Confirm Password'
+            type="password"
+            placeholder="Confirm Password"
+            onChange={handleChange}
           ></Form.Control>
-        </Form.Group>
-
+        </Form.Group> */}
+          {error && <div className="mt-3">Sign up failed</div>}
         {/* My button was to close to the form password i used a class name to add margin on y axis */}
-        <Button type='submit' className='my-3' variant='primary'>
+        <Button type="submit" className="my-3" variant="primary">
           Register
         </Button>
       </Form>
-      <Row className='py-3'>
+      <Row className="py-3">
         <Col>
-        Already have an account? {' '}
-        <Link to='/login'>
-          Login{' '}
-        </Link>
+          Already have an account? <Link to="/login">Login </Link>
         </Col>
       </Row>
     </FormContainer>
-  )
-}
+  );
+};
 
-export default SignupPage
+export default SignupPage;
