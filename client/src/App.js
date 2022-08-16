@@ -3,7 +3,7 @@ import Home from "../src/pages/Home";
 import Login from "../src/pages/Login";
 import Signup from "../src/pages/Signup";
 import Profile from "../src/pages/Profile";
-import ViewBuild from "../src/pages/ViewBuild";
+import NewBuild from "../src/pages/NewBuild";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -47,7 +47,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/viewbuilds" element={<ViewBuild />} />
+          <Route path="/newbuild" element={<NewBuild />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
