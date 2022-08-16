@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import ErrorMessage from "../components/ErrorMessage"
 
 const LoginPage = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -66,6 +67,7 @@ const LoginPage = (props) => {
             onChange={handleChange}
           ></Form.Control>
         </Form.Group>
+        {error && <ErrorMessage variant='danger'>Sign Up Failed</ErrorMessage>}
         {/* My button was to close to the form password i used a class name to add margin on y axis */}
         <Button type="submit" className="my-3" variant="primary">
           Sign In

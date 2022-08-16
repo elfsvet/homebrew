@@ -2,7 +2,7 @@ import React, {useState } from 'react'
 import { Button, Container, Row, Form, Col } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
 import { Link } from 'react-router-dom';
-
+import ErrorMessage from '../components/ErrorMessage';
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
@@ -79,7 +79,7 @@ const SignupPage = () => {
             onChange={handleChange}
           ></Form.Control>
         </Form.Group> */}
-          {error && <div className="mt-3">Sign up failed</div>}
+          {error && <ErrorMessage variant='danger'>Sign Up Failed</ErrorMessage>}
         {/* My button was to close to the form password i used a class name to add margin on y axis */}
         <Button type="submit" className="my-3" variant="primary">
           Register
