@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Container, Row, Form, Col } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
 import { Link } from 'react-router-dom';
 
 
 const LoginPage = () => {
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+
   return (
     <FormContainer>
     <h1>Sign In</h1>

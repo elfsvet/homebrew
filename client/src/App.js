@@ -11,9 +11,10 @@ import {
 
 import Header from "./components/Header";
 import LoginPage from "./pages/LoginPage";
-import Homepage from "./pages/Homepage";
-import NewBuild from "./pages/NewBuild";
+import HomePage from "./pages/HomePage";
+import NewBuildPage from "./pages/NewBuildPage";
 import SignupPage from "./pages/SignupPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,10 +43,11 @@ function App() {
         <main className="py-3">
           <Container>
             <Routes>
-              <Route path="/" element={<Homepage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
-              <Route path="/newbuild" element={<NewBuild />} />
+              <Route path="/newbuild" element={<NewBuildPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </Container>
         </main>
