@@ -1,6 +1,9 @@
 import React from 'react'
 import { Button, Container, Row, Form, Col } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
+import { Link } from 'react-router-dom';
+
+
 const SignupPage = () => {
   return (
     <FormContainer>
@@ -47,7 +50,10 @@ const SignupPage = () => {
       </Form>
       <Row className='py-3'>
         <Col>
-          Have an Account?{' '}
+        Already have an account? {' '}
+        <Link to='/login'>
+          Login{' '}
+        </Link>
         </Col>
       </Row>
     </FormContainer>

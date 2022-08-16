@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, Container, Row, Form, Col } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
+import { Link } from 'react-router-dom';
+
 
 const LoginPage = () => {
   return (
@@ -31,7 +33,9 @@ const LoginPage = () => {
     <Row className='py-3'>
       <Col>
       {/* redirect me to signup page */}
-        New Customer?{' '}
+        <Link to='/signup'>
+        Create New Account{' '}
+        </Link>
       </Col>
     </Row>
   </FormContainer>
