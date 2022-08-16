@@ -6,8 +6,6 @@ const characterSchema = new Schema(
     name: {
       type: String,
       required: 'Please provide a name for this character',
-      minlength: 1,
-      maxlength: 10
     },
     race: {
       type: String,

@@ -1,7 +1,8 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { Character, User } = require('../models')
+const { Character, User } = require('../models');
+const { findById } = require('../models/User');
 
 db.once('open', async() => {
   await Character.deleteMany({});
@@ -22,14 +23,14 @@ db.once('open', async() => {
 
   // create partyMembers
   for (let i = 0; i < 100; i += 1) {
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { _id: userId } = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    const userId = createdUsers.insertedIds[randomUserIndex.toString()];
 
     let partyMemberId = userId;
 
     while (partyMemberId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-      partyMemberId = createdUsers.ops[randomUserIndex];
+      const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+      partyMemberId = createdUsers.insertedIds[randomUserIndex.toString()];
     }
 
     await User.updateOne(
@@ -42,10 +43,10 @@ db.once('open', async() => {
   function getRandomNumberWithExclusion(statsArray, ...arrayOfIndexesToExclude) {
     let statPoint = null;
 
-    while(statPoint === null || statPoint === arrayOfIndexesToExclude(statPoint)) {
+    while(statPoint === null || arrayOfIndexesToExclude.indexOf(statsArray[statPoint]) !== -1) {
       statPoint = Math.round(Math.random() * (statsArray.length -1))
     }
-    return statPoint
+    return statsArray[statPoint]
   }
 
   // create characters
@@ -56,10 +57,10 @@ db.once('open', async() => {
     const races = ['Dwarf', 'Elf', 'Halfling', 'Human', 'Dragonborn', 'Gnome', 'Half-Elf', 'Half-Orc', 'Tiefling', 'Arakocra', 'Genasi', 'Goliath', 'Tabaxi', 'Kobold', 'Kenku']
     const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']
 
-    const characterName = faker.name.firstName() + '/t' + faker.name.lastName();
+    const characterName = faker.name.firstName() + ' ' + faker.name.lastName();
     const characterBio = faker.lorem.words(Math.round(Math.random() * 20) + 1);
-    const characterRace = Math.floor(Math.random() * races.length);
-    const characterClass = Math.floor(Math.random() * classes.length);
+    const characterRace = races[Math.floor(Math.random() * races.length)];
+    const characterClass = classes[Math.floor(Math.random() * classes.length)];
     const characterStr = getRandomNumberWithExclusion(statPoints, null)
     const characterDex = getRandomNumberWithExclusion(statPoints, characterStr)
     const characterCon = getRandomNumberWithExclusion(statPoints, characterStr, characterDex)
@@ -67,24 +68,27 @@ db.once('open', async() => {
     const characterWis = getRandomNumberWithExclusion(statPoints, characterStr, characterDex, characterCon, characterInt)
     const characterCha = getRandomNumberWithExclusion(statPoints, characterStr, characterDex, characterCon, characterInt, characterWis)
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    const userId = createdUsers.insertedIds[randomUserIndex.toString()];
 
-    const createdCharacter = await Character.create(
+    const user = await User.findById(userId)
+
+    const createdCharacter =
       {
-        characterName,
-        characterBio,
-        characterRace,
-        characterClass,
-        characterStr,
-        characterDex,
-        characterCon,
-        characterInt,
-        characterWis,
-        characterCha,
-        username
+        name: characterName,
+        bio: characterBio,
+        race: characterRace,
+        class: characterClass,
+        strength: characterStr,
+        dexterity: characterDex,
+        constitution: characterCon,
+        intelligence: characterInt,
+        wisdom: characterWis,
+        charisma: characterCha,
+        username: user.username
       }
-    )
+      
+    const test = await Character.create(createdCharacter)
 
     const updatedUser = await User.updateOne(
       { _id: userId },
@@ -98,8 +102,9 @@ db.once('open', async() => {
   for (let i = 0; i < 100; i += 1) {
     const commentBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username } = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    const userId = createdUsers.insertedIds[randomUserIndex.toString()];
+    const { username } = await User.findById(userId)
 
     const randomCharacterIndex = Math.floor(Math.random() * createdCharacters.length);
     const { _id: characterId } = createdCharacters[randomCharacterIndex];
