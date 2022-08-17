@@ -25,6 +25,7 @@ const typeDefs = gql`
     wisdom: Int
     charisma: Int
     comments: [Comment]
+    commentCount: Int
   }
 
   type Comment {

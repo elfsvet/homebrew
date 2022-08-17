@@ -4,7 +4,7 @@ import { Container, Card } from "react-bootstrap";
 
 const CharacterList = ({ characters, title }) => {
   if (!characters.length) {
-    return <h3>You failed your perception check, and you see not a soul inhabiting this habit. </h3>
+    return <h3>Huh... No one in the tavern...</h3>
   }
 
   return (

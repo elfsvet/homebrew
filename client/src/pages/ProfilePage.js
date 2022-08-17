@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { Navigate, useParams } from 'react-router'
 import CharacterList from '../components/CharacterList'
 import { useQuery } from '@apollo/client'
-import { QUERY_CHARACTERS, QUERY_ME_BASIC, QUERY_ME } from '../utils/queries'
+import { QUERY_USER, QUERY_ME } from '../utils/queries'
+import auth from '../utils/auth'
 import {
   Container,
   Card,
@@ -16,18 +18,36 @@ const ProfilePage = () => {
   // toggle the update profile button
   const [open, setOpen] = useState(false)
 
-  const { data: meData } = useQuery(QUERY_ME);
-  const { data: userData } = useQuery(QUERY_ME_BASIC);
-  const characters = meData?.characters || []
-  console.log(characters)
+  const { username: userParam } = useParams();
 
-  console.log(meData)
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam }
+  })
+
+  const user = data?.me || data?.user || {}
+
+  if (auth.loggedIn() && auth.getProfile().data.username === userParam) {
+    return <Navigate to="/profile"/>;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (!user?.username) {
+    return (
+      <h4>
+        You need to be logged in to see this page. Use the navigation links above to sign up or log in!
+      </h4>
+    )
+  }
 
   return (
     <Row>
+      <div>TEST</div>
       {/* USER's BUILDS */}
       <Col xs={12} md={4}>
-        <CharacterList characters={characters}/>
+        <CharacterList characters={user.characters} title={`${user.username}'s builds...`}/>
         {/* <Container className='mb-3 '>
           <Card className='mb-3 ' style={{ width: '100%' }}>
             <Card.Body>
@@ -43,19 +63,19 @@ const ProfilePage = () => {
             </Card.Body>
           </Card> */}
           {/* second card to delete, for show for now */}
-          {/* <Card style={{ width: '100%' }}>
-            <Card.Body>
-              <Card.Title>Character Name</Card.Title>
-              <Card.Subtitle className='mb-2 text-muted'>
-                Race/Class
-              </Card.Subtitle>
-              <Card.Text>Character Bio</Card.Text>
-              <Card.Text>
-                <span>HP</span> | <span>Stats</span>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Container> */}
+           {/* <Card style={{ width: '100%' }}>
+             <Card.Body>
+               <Card.Title>Character Name</Card.Title>
+               <Card.Subtitle className='mb-2 text-muted'>
+                 Race/Class
+               </Card.Subtitle>
+               <Card.Text>Character Bio</Card.Text>
+               <Card.Text>
+                 <span>HP</span> | <span>Stats</span>
+               </Card.Text>
+             </Card.Body>
+           </Card>
+         </Container> */}
       </Col>
       {/* BIO USER INFO AND CHANGE PROFILE FRIENDS BOOKMARK */}
       <Col xs={12} md={8}>
@@ -63,7 +83,7 @@ const ProfilePage = () => {
           <Card style={{ width: '100%' }}>
             <Card.Body>
               {/* map the info from state userInfo */}
-              <Card.Title className='text-center'>User Name</Card.Title>
+              <Card.Title className='text-center'>{user.username}</Card.Title>
 
               <Card.Title>About</Card.Title>
               <Card.Text>
