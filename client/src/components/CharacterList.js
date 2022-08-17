@@ -4,7 +4,7 @@ import { Container, Card } from "react-bootstrap";
 
 const CharacterList = ({ characters, title }) => {
   if (!characters.length) {
-    return <h3>You failed your perception check, and you see not a soul inhabiting this habit. </h3>
+    return <h3>Huh... No one in the tavern...</h3>
   }
 
   return (
@@ -17,14 +17,13 @@ const CharacterList = ({ characters, title }) => {
               <Card.Header>
                 <Link
                   to={`/profile/${character.username}`}
-                  style={{ fontWeight: 700 }}
-                  className="text-light"
+                  style={{ fontWeight: 700, textDecoration: 'none' }}
                 >
                   {character.username}
                 </Link>
               </Card.Header>
               <Card.Body>
-                <Link to={`/character/${character.id}`}>
+                <Link to={`/character/${character.id}`} style={{ fontWeight: 700, textDecoration: 'none'}}>
                   <Card.Title>{character.name}</Card.Title>
                 </Link>
                 <Card.Subtitle className="mb-2 text-muted">
