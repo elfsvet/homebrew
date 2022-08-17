@@ -44,7 +44,6 @@ const ProfilePage = () => {
 
   return (
     <Row>
-      <div>TEST</div>
       {/* USER's BUILDS */}
       <Col xs={12} md={4}>
         <CharacterList characters={user.characters} title={`${user.username}'s builds...`}/>
