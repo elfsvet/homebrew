@@ -19,6 +19,7 @@ db.once('open', async() => {
     userData.push({ username, email, password });
   }
 
+
   const createdUsers = await User.collection.insertMany(userData);
 
   // create partyMembers
@@ -90,7 +91,7 @@ db.once('open', async() => {
       
     const test = await Character.create(createdCharacter)
 
-    const updatedUser = await User.updateOne(
+    await User.updateOne(
       { _id: userId },
       { $push: { characters: createdCharacter._id } }
     );
