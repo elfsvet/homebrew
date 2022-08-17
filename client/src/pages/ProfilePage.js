@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap'
 
 const ProfilePage = () => {
+  // toggle the update profile button
   const [open, setOpen] = useState(false)
 
   return (
@@ -19,7 +20,7 @@ const ProfilePage = () => {
         <Container>
           <Card className='mb-3' style={{ width: '100%' }}>
             <Card.Body>
-              <Card.Title>Chracter name</Card.Title>
+              <Card.Title>Character Name</Card.Title>
               <Card.Subtitle className='mb-2 text-muted'>
                 Race/Class
               </Card.Subtitle>
@@ -33,7 +34,7 @@ const ProfilePage = () => {
           {/* second card to delete, for show for now */}
           <Card style={{ width: '100%' }}>
             <Card.Body>
-              <Card.Title>Chracter name</Card.Title>
+              <Card.Title>Character Name</Card.Title>
               <Card.Subtitle className='mb-2 text-muted'>
                 Race/Class
               </Card.Subtitle>

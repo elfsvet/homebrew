@@ -1,7 +1,11 @@
 import React from 'react'
 import { Alert } from 'react-bootstrap'
 const ErrorMessage = ({ variant, children }) => {
-  return <Alert variant={variant} className='mt-3'>{children}</Alert>
+  return (
+    <Alert variant={variant} className='mt-3'>
+      {children}
+    </Alert>
+  )
 }
 
 ErrorMessage.defaultProps = {
