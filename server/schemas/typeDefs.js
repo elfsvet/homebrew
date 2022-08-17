@@ -6,6 +6,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    password: String
     characters: [Character]
     partyMemberCount: Int
     partyMembers: [User]
@@ -25,6 +26,7 @@ const typeDefs = gql`
     wisdom: Int
     charisma: Int
     comments: [Comment]
+    commentCount: Int
   }
 
   type Comment {

@@ -52,7 +52,11 @@ function App() {
               <Route path='/login' element={<LoginPage />} />
               <Route path='/signup' element={<SignupPage />} />
               <Route path='/newbuild' element={<NewBuildPage />} />
-              <Route path='/profile' element={<ProfilePage />} />
+              {/* COMMENTED OUT FOR THE SAKE OF TESTING <Route path='/profile' element={<ProfilePage />} /> */}
+              <Route path='/profile'>
+                <Route path=':username' element={<ProfilePage/>}/>
+                <Route path='' element={<ProfilePage/>}/>
+              </Route>
             </Routes>
           </Container>
         </main>

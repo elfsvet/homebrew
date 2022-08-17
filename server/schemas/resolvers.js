@@ -21,7 +21,7 @@ const resolvers = {
     // query all users
     users: async () => {
       return User.find()
-        .select('-__v -password')
+        .select('-__v')
         .populate('partyMembers')
         .populate('characters')
     },

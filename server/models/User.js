@@ -23,7 +23,7 @@ const userSchema = new Schema (
     characters: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Character"
+        ref: 'Character'
       }
     ],
     partyMembers: [
