@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <Navbar>
-      <Container>
-        <Row md='auto'>
-          <Col>Copyright &copy; {new Date().getFullYear()}</Col>
-          <Col>Armon Julio Yolanda Stepan</Col>
-        </Row>
-      </Container>
-    </Navbar>
+    <Container>
+      <Row className='text-center justify-content-space-between'>
+        <Col xs={12} md={6}  >Copyright &copy; {new Date().getFullYear()}</Col>
+        {/* should be external links to our github's profiles */}
+        <Col xs={12} md={6} >Armon Julio Yolanda Stepan</Col>
+      </Row>
+    </Container>
   )
 }
 
