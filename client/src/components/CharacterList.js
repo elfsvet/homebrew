@@ -21,14 +21,14 @@ const CharacterList = ({ characters, title }) => {
                   className="text-light"
                 >
                   {character.username}
-                </Link>(' ')
+                </Link>
               </Card.Header>
               <Card.Body>
                 <Link to={`/character/${character.id}`}>
                   <Card.Title>{character.name}</Card.Title>
                 </Link>
                 <Card.Subtitle className="mb-2 text-muted">
-                  {character.race}(' '){character.class}
+                  {character.race}/{character.class}
                 </Card.Subtitle>
                 <Card.Text>
                   {character.bio}
