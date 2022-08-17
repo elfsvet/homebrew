@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react' //useEffect is commented out for now
 import { setContext } from '@apollo/client/link/context'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
