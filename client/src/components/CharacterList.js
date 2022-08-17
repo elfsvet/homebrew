@@ -17,13 +17,13 @@ const CharacterList = ({ characters, title }) => {
               <Card.Header>
                 <Link
                   to={`/profile/${character.username}`}
-                  style={{ fontWeight: 700 }}
+                  style={{ fontWeight: 700, textDecoration: 'none' }}
                 >
                   {character.username}
                 </Link>
               </Card.Header>
               <Card.Body>
-                <Link to={`/character/${character.id}`}>
+                <Link to={`/character/${character.id}`} style={{ fontWeight: 700, textDecoration: 'none'}}>
                   <Card.Title>{character.name}</Card.Title>
                 </Link>
                 <Card.Subtitle className="mb-2 text-muted">
