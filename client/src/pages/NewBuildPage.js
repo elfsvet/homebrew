@@ -56,21 +56,21 @@ const NewBuild = () => {
         <Col sm={10}>
           <Form.Select aria-label='Default select example'>
             <option>Select Character Race</option>
+            <option value='Arakocra'>Arakocra</option>
+            <option value='Dragonborn'>Dragonborn</option>
             <option value='Dwarf'>Dwarf</option>
             <option value='Elf'>Elf</option>
-            <option value='Halfling'>Halfling</option>
-            <option value='Human'>Human</option>
-            <option value='Dragonborn'>Dragonborn</option>
+            <option value='Genasi'>Genasi</option>
             <option value='Gnome'>Gnome</option>
+            <option value='Goliath'>Goliath</option>
             <option value='Half-Elf'>Half-Elf</option>
             <option value='Half-Orc'>Half-Orc</option>
-            <option value='Tiefling'>Tiefling</option>
-            <option value='Arakocra'>Half-Orc</option>
-            <option value='Genasi'>Genasi</option>
-            <option value='Goliath'>Goliath</option>
-            <option value='Tabaxi'>Tabaxi</option>
-            <option value='Kobold'>Kobold</option>
+            <option value='Halfling'>Halfling</option>
+            <option value='Human'>Human</option>
             <option value='Kenku'>Kenku</option>
+            <option value='Kobold'>Kobold</option>
+            <option value='Tabaxi'>Tabaxi</option>
+            <option value='Tiefling'>Tiefling</option>
           </Form.Select>
         </Col>
       </Form.Group>
