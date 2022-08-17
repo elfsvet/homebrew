@@ -16,9 +16,9 @@ const ProfilePage = () => {
   return (
     <Row>
       {/* USER's BUILDS */}
-      <Col xs={2} md={4}>
-        <Container>
-          <Card className='mb-3' style={{ width: '100%' }}>
+      <Col xs={12} md={4}>
+        <Container className='mb-3 '>
+          <Card className='mb-3 ' style={{ width: '100%' }}>
             <Card.Body>
               <Card.Title>Character Name</Card.Title>
               <Card.Subtitle className='mb-2 text-muted'>
@@ -47,9 +47,9 @@ const ProfilePage = () => {
         </Container>
       </Col>
       {/* BIO USER INFO AND CHANGE PROFILE FRIENDS BOOKMARK */}
-      <Col xs={10} md={8}>
+      <Col xs={12} md={8}>
         <Container>
-          <Card className='mb-3' style={{ width: '100%' }}>
+          <Card style={{ width: '100%' }}>
             <Card.Body>
               {/* map the info from state userInfo */}
               <Card.Title className='text-center'>User Name</Card.Title>
@@ -70,6 +70,7 @@ const ProfilePage = () => {
           </Card>
 
           <Button
+            className='my-3'
             onClick={() => setOpen(!open)}
             aria-controls='update-user-profile'
             aria-expanded={open}

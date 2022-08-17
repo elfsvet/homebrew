@@ -11,6 +11,7 @@ import {
 
 import Header from './components/Header'
 import LoginPage from './pages/LoginPage'
+// RENAMED HomePage
 import HomePage from './pages/HomePage'
 import NewBuildPage from './pages/NewBuildPage'
 import SignupPage from './pages/SignupPage'
