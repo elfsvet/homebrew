@@ -18,7 +18,6 @@ const CharacterList = ({ characters, title }) => {
                 <Link
                   to={`/profile/${character.username}`}
                   style={{ fontWeight: 700 }}
-                  className="text-light"
                 >
                   {character.username}
                 </Link>
