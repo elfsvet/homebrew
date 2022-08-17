@@ -29,13 +29,15 @@ const SignupPage = () => {
     try {
        // execute addUser mutation and pass in variable data from form
        const { data } = await addUser({
-        variables: { ...formState }
-       });
+         variables: { ...formState }
+        });
        Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
   };
+
+  console.log(formState)
 
   return (
     <FormContainer>

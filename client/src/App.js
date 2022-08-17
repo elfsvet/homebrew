@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import { setContext } from '@apollo/client/link/context'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -35,7 +36,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
+
 function App() {
+
+
   return (
     <ApolloProvider client={client}>
       <Router>
