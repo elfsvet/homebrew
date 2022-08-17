@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 
-const Homepage = () => {
+const HomePage = () => {
   
   return (
       <Container>
@@ -35,4 +35,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;
