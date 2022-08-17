@@ -33,9 +33,18 @@ const NewBuild = () => {
         <Col sm={10}>
           <Form.Select aria-label='Default select example'>
             <option>Select Character Class</option>
-            <option value='1'>One</option>
-            <option value='2'>Two</option>
-            <option value='3'>Three</option>
+            <option value='Barbarian'>Barbarian</option>
+            <option value='Bard'>Bard</option>
+            <option value='Cleric'>Cleric</option>
+            <option value='Druid'>Druid</option>
+            <option value='Fighter'>Fighter</option>
+            <option value='Monk'>Monk</option>
+            <option value='Paladin'>Paladin</option>
+            <option value='Ranger'>Ranger</option>
+            <option value='Rogue'>Rogue</option>
+            <option value='Sorcerer'>Sorcerer</option>
+            <option value='Warlock'>Warlock</option>
+            <option value='Wizard'>Wizard</option>
           </Form.Select>
         </Col>
       </Form.Group>
@@ -47,9 +56,21 @@ const NewBuild = () => {
         <Col sm={10}>
           <Form.Select aria-label='Default select example'>
             <option>Select Character Race</option>
-            <option value='1'>One</option>
-            <option value='2'>Two</option>
-            <option value='3'>Three</option>
+            <option value='Dwarf'>Dwarf</option>
+            <option value='Elf'>Elf</option>
+            <option value='Halfling'>Halfling</option>
+            <option value='Human'>Human</option>
+            <option value='Dragonborn'>Dragonborn</option>
+            <option value='Gnome'>Gnome</option>
+            <option value='Half-Elf'>Half-Elf</option>
+            <option value='Half-Orc'>Half-Orc</option>
+            <option value='Tiefling'>Tiefling</option>
+            <option value='Arakocra'>Half-Orc</option>
+            <option value='Genasi'>Genasi</option>
+            <option value='Goliath'>Goliath</option>
+            <option value='Tabaxi'>Tabaxi</option>
+            <option value='Kobold'>Kobold</option>
+            <option value='Kenku'>Kenku</option>
           </Form.Select>
         </Col>
       </Form.Group>
