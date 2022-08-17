@@ -67,7 +67,7 @@ const LoginPage = (props) => {
             onChange={handleChange}
           ></Form.Control>
         </Form.Group>
-        {error && <ErrorMessage variant='danger'>Sign Up Failed</ErrorMessage>}
+        {error && <ErrorMessage variant='danger'>Login Failed</ErrorMessage>}
         {/* My button was to close to the form password i used a class name to add margin on y axis */}
         <Button type="submit" className="my-3" variant="primary">
           Sign In
