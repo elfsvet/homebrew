@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import CharacterList from '../components/CharacterList'
+import { useQuery } from '@apollo/client'
+import { QUERY_CHARACTERS, QUERY_ME_BASIC, QUERY_ME } from '../utils/queries'
 import {
   Container,
   Card,
@@ -13,11 +16,19 @@ const ProfilePage = () => {
   // toggle the update profile button
   const [open, setOpen] = useState(false)
 
+  const { data: meData } = useQuery(QUERY_ME);
+  const { data: userData } = useQuery(QUERY_ME_BASIC);
+  const characters = meData?.characters || []
+  console.log(characters)
+
+  console.log(meData)
+
   return (
     <Row>
       {/* USER's BUILDS */}
       <Col xs={12} md={4}>
-        <Container className='mb-3 '>
+        <CharacterList characters={characters}/>
+        {/* <Container className='mb-3 '>
           <Card className='mb-3 ' style={{ width: '100%' }}>
             <Card.Body>
               <Card.Title>Character Name</Card.Title>
@@ -25,14 +36,14 @@ const ProfilePage = () => {
                 Race/Class
               </Card.Subtitle>
               <Card.Text>Character Bio</Card.Text>
-              <Card.Text>
+              <Card.Text> */}
                 {/* going to need a function for the stats to map through all the stats of the character to load */}
-                <span>HP</span> | <span>Stats</span>
+                {/* <span>HP</span> | <span>Stats</span>
               </Card.Text>
             </Card.Body>
-          </Card>
+          </Card> */}
           {/* second card to delete, for show for now */}
-          <Card style={{ width: '100%' }}>
+          {/* <Card style={{ width: '100%' }}>
             <Card.Body>
               <Card.Title>Character Name</Card.Title>
               <Card.Subtitle className='mb-2 text-muted'>
@@ -44,7 +55,7 @@ const ProfilePage = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Container>
+        </Container> */}
       </Col>
       {/* BIO USER INFO AND CHANGE PROFILE FRIENDS BOOKMARK */}
       <Col xs={12} md={8}>
