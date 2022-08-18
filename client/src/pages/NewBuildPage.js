@@ -88,12 +88,15 @@ const NewBuild = () => {
         </Col>
       </Form.Group>
 
-      <fieldset>
-        <Form.Group as={Row} className='mb-3'>
+      <fieldset >
+        <Form.Group as={Row} className='mb-3' >
+        <Col sm={2}>
           <Form.Label as='legend' column sm={2}>
             STR
           </Form.Label>
-          <Col sm={10}>
+
+        </Col>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
@@ -145,7 +148,7 @@ const NewBuild = () => {
           <Form.Label as='legend' column sm={2}>
             DEX
           </Form.Label>
-          <Col sm={10}>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
@@ -197,7 +200,7 @@ const NewBuild = () => {
           <Form.Label as='legend' column sm={2}>
             CON
           </Form.Label>
-          <Col sm={10}>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
@@ -249,7 +252,7 @@ const NewBuild = () => {
           <Form.Label as='legend' column sm={2}>
             INT
           </Form.Label>
-          <Col sm={10}>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
@@ -301,7 +304,7 @@ const NewBuild = () => {
           <Form.Label as='legend' column sm={2}>
             WIS
           </Form.Label>
-          <Col sm={10}>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
@@ -353,7 +356,7 @@ const NewBuild = () => {
           <Form.Label as='legend' column sm={2}>
             CHA
           </Form.Label>
-          <Col sm={10}>
+          <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline
               type='radio'
