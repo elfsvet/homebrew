@@ -14,7 +14,7 @@ const NewBuild = () => {
       </Form.Group>
 
       <Form.Group as={Row} className='mb-3' controlId='formHorizontalBio'>
-        <Form.Label column sm={2}>
+        <Form.Label column sm={2} className='d-flex align-items-center'>
           Character Bio
         </Form.Label>
         <Col sm={10}>
@@ -76,7 +76,7 @@ const NewBuild = () => {
       </Form.Group>
 
       <Form.Group as={Row} className='mb-3' controlId='formHorizontalHp'>
-        <Form.Label column sm={2}>
+        <Form.Label column sm={2} className='d-flex align-items-center'>
           Character HP:
         </Form.Label>
         <Col sm={10}>
