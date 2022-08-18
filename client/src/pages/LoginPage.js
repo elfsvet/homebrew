@@ -48,7 +48,7 @@ const LoginPage = (props) => {
       <h1>Sign In</h1>
 
       <Form onSubmit={handleFormSubmit}>
-        <Form.Group controlId="email">
+        <Form.Group controlId="email" className="mb-2">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             name="email"
@@ -58,7 +58,7 @@ const LoginPage = (props) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="password">
+        <Form.Group controlId="password" className="mb-2">
           <Form.Label>Password</Form.Label>
           <Form.Control
             name="password"

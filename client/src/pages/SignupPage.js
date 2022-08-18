@@ -43,7 +43,7 @@ const SignupPage = () => {
     <FormContainer>
       <h1>Sign Up</h1>
       <Form onSubmit={handleFormSubmit}>
-        <Form.Group controlId="username">
+        <Form.Group controlId="username" className="mb-2">
           <Form.Label>Name</Form.Label>
           <Form.Control
             name='username'
@@ -53,7 +53,7 @@ const SignupPage = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="email">
+        <Form.Group controlId="email" className="mb-2">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             name="email"
@@ -63,7 +63,7 @@ const SignupPage = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="password">
+        <Form.Group controlId="password" className="mb-2">
           <Form.Label>Password</Form.Label>
           <Form.Control
             name="password"
