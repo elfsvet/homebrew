@@ -94,10 +94,11 @@ To do:
 > If you still have any questions, please don't hesitate to contact me:
 > Created by:
 
-- [@Abstrack5](https://github.com/Abstrack5) || [LinkedIn](https://www.linkedin.com/in/armon-ahmadi)
 
-- [@justjulio95](https://github.com/justjulio95) || [LinkedIn](https://www.linkedin.com/in/julio-suarez95/)
+[![linkedin logo](./client/public/images/LI-In-Bug.png)](https://www.linkedin.com/in/armon-ahmadi)[![github logo](./client/public/images/GitHub-Mark-32px.png) Armon](https://github.com/Abstrack5)  
 
-- [@yoli19](https://github.com/yoli19) || [LinkedIn](https://www.linkedin.com/in/yolanda-jacobs-a477a5153/)
+[![linkedin logo](./client/public/images/LI-In-Bug.png)](https://www.linkedin.com/in/julio-suarez95/)[![github logo](./client/public/images/GitHub-Mark-32px.png)Julio](https://github.com/justjulio95)  
 
-- [@elfsvet](https://github.com/elfsvet) || [LinkedIn](https://www.linkedin.com/in/stepanmatysik/)
+[![linkedin logo](./client/public/images/LI-In-Bug.png)](https://www.linkedin.com/in/yolanda-jacobs-a477a5153/)[![github logo](./client/public/images/GitHub-Mark-32px.png)Yolanda](https://github.com/yoli19)  
+
+[![linkedin logo](./client/public/images/LI-In-Bug.png)](https://www.linkedin.com/in/stepanmatysik/)[![github logo](./client/public/images/GitHub-Mark-32px.png)Stepan](https://github.com/elfsvet)  
