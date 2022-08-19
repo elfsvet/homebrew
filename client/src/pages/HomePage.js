@@ -11,7 +11,7 @@ const HomePage = () => {
   const { data: userData } = useQuery(QUERY_ME_BASIC)
 
   const characters = data?.characters || []
-  console.log(characters)
+  // console.log(characters)
 
   const loggedIn = auth.loggedIn()
 

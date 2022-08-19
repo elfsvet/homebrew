@@ -11,11 +11,11 @@ const CharacterInfoPage = () => {
   const { loading, data } = useQuery(QUERY_CHARACTER, {
     variables: { id: charId },
   })
-  console.log('This is data: ' + JSON.stringify(data))
+  // console.log('This is data: ' + JSON.stringify(data))
   const character = data?.character || []
   // const { data: userData } = useQuery(QUERY_ME_BASIC)
-  console.log(charId)
-  console.log(character.name)
+  // console.log(charId)
+  // console.log(character.name)
   // const character = data?.character || []
   // console.log(userData)
   return (
