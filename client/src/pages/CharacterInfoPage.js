@@ -15,7 +15,7 @@ const CharacterInfoPage = () => {
   const character = data?.character || []
   // const { data: userData } = useQuery(QUERY_ME_BASIC)
   // console.log(charId)
-  console.log(character)
+  // console.log(character)
   // console.log(userData)
   return (
     
