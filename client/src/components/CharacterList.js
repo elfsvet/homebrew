@@ -15,7 +15,7 @@ const CharacterList = ({ characters, title }) => {
             {/* Card Header with character name */}
             <Card.Header>
               <Link
-                to={`/character/${character.id}`}
+                to={`/character/${character._id}`}
                 style={{ fontWeight: 700, textDecoration: 'none' }}
               >
                 <Card.Title>{character.name}</Card.Title>
