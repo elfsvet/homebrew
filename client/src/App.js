@@ -16,6 +16,7 @@ import HomePage from './pages/HomePage'
 import NewBuildPage from './pages/NewBuildPage'
 import SignupPage from './pages/SignupPage'
 import ProfilePage from './pages/ProfilePage'
+import CharacterInfoPage from './pages/CharacterInfoPage'
 import Footer from './components/Footer'
 
 const httpLink = createHttpLink({
@@ -37,10 +38,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-
 function App() {
-
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -51,11 +49,15 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />
               <Route path='/signup' element={<SignupPage />} />
+              <Route path='/character'>
+                <Route path=':id' element={<CharacterInfoPage />}/>
+                <Route path='' element={<CharacterInfoPage />}/>
+
+              </Route>
               <Route path='/newbuild' element={<NewBuildPage />} />
-              {/* COMMENTED OUT FOR THE SAKE OF TESTING <Route path='/profile' element={<ProfilePage />} /> */}
               <Route path='/profile'>
-                <Route path=':username' element={<ProfilePage/>}/>
-                <Route path='' element={<ProfilePage/>}/>
+                <Route path=':username' element={<ProfilePage />} />
+                <Route path='' element={<ProfilePage />} />
               </Route>
             </Routes>
           </Container>

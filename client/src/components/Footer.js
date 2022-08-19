@@ -19,7 +19,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <i class='fa-brands fa-github'></i> Armon
+                <i className='fa-brands fa-github'></i> Armon
               </Nav.Link>
             </Col>
             <Col xs={12} md='auto'>
@@ -30,7 +30,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <i class='fa-brands fa-github'></i> Julio
+                <i className='fa-brands fa-github'></i> Julio
               </Nav.Link>
             </Col>
             <Col xs={12} md='auto'>
@@ -41,7 +41,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <i class='fa-brands fa-github'></i> Yolanda
+                <i className='fa-brands fa-github'></i> Yolanda
               </Nav.Link>
             </Col>
             <Col xs={12} md='auto'>
@@ -52,7 +52,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <i class='fa-brands fa-github'></i> Stepan
+                <i className='fa-brands fa-github'></i> Stepan
               </Nav.Link>
             </Col>
           </Row>

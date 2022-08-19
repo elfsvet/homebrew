@@ -7,11 +7,11 @@ function Header() {
     auth.logout()
   }
   return (
-    <header>
-      <Navbar bg='light' expand='lg'>
+
+      <Navbar bg='light' expand='lg' className='mb-3'>
         <Container>
           <Navbar.Brand as={Link} to='/'>
-            <Image src='./images/Claudron146.png' alt='claudron' />
+            <Image src='./images/logo.png' alt='claudron' />
             HOMEBREW
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -43,27 +43,11 @@ function Header() {
                   </Nav.Link>
                 </>
               )}
-              {/* <Nav.Link as={Link} to='/profile'>
-              Profile
-            </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-{/*
-      <Image src='./images/pexels-stephen-hardy-7061817.jpg' fluid />
     
-        <div
-          className='mask'
-          style={{ backgroundColor: 'rgba(256, 256, 256, 0.3)' }}
-        >
-          <div className='d-flex justify-content-center align-items-center'>
-            <div className=''>
-              <h1 className=''>Homebrew</h1>
-            </div>
-          </div>
-        </div> */}
-    </header>
   )
 }
 
