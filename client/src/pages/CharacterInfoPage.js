@@ -15,8 +15,7 @@ const CharacterInfoPage = () => {
   const character = data?.character || []
   // const { data: userData } = useQuery(QUERY_ME_BASIC)
   // console.log(charId)
-  // console.log(character.name)
-  // const character = data?.character || []
+  console.log(character)
   // console.log(userData)
   return (
     
@@ -56,6 +55,12 @@ const CharacterInfoPage = () => {
                   {character.wisdom} | CHA:{character.charisma}
                 </span>
               </Card.Text>
+              <Card.Text>comments: {character.commentCount}</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Body>
+              <Card.Text>Comment by: Comments will map here.</Card.Text>
             </Card.Body>
           </Card>
     </Container>

@@ -1,15 +1,55 @@
-import React from 'react'
+import { useMutation } from '@apollo/client'
+import React, { useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
-
+import { ADD_CHARACTER } from '../utils/mutations'
+import Auth from '../utils/auth'
 const NewBuild = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    race: '',
+    class: '',
+    bio: '',
+    strength: '',
+    dexterity: '',
+    constitution: '',
+    intelligence: '',
+    wisdom: '',
+    charisma: '',
+  })
+
+  const [ addCharacter, {error}] = useMutation(ADD_CHARACTER);
+const handleChange = (e) => {
+  const { name, value} = e.target;
+
+  setFormState({
+    ...formState,
+    [name]:value,
+  });
+};
+
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const {data} = await  addCharacter({
+      variables: {...formState}
+    });
+    Auth.login(data.addUser.token);
+    
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+
   return (
-    <Form>
+    <Form onScroll={handleFormSubmit}>
       <Form.Group as={Row} className='mb-3' controlId='formHorizontalName'>
         <Form.Label column sm={2}>
           Character Name
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type='text' placeholder='Character Name' />
+          <Form.Control type='text' placeholder='Character Name'/>
         </Col>
       </Form.Group>
 
@@ -22,6 +62,7 @@ const NewBuild = () => {
             as='textarea'
             rows={3}
             placeholder='Tell us about your character!'
+            value={formState.bio}
           />
         </Col>
       </Form.Group>
@@ -31,7 +72,7 @@ const NewBuild = () => {
           Character Class
         </Form.Label>
         <Col sm={10}>
-          <Form.Select aria-label='Default select example'>
+          <Form.Select aria-label='Default select example' >
             <option>Select Character Class</option>
             <option value='Barbarian'>Barbarian</option>
             <option value='Bard'>Bard</option>
@@ -54,7 +95,7 @@ const NewBuild = () => {
           Character Race
         </Form.Label>
         <Col sm={10}>
-          <Form.Select aria-label='Default select example'>
+          <Form.Select aria-label='Default select example' >
             <option>Select Character Race</option>
             <option value='Arakocra'>Arakocra</option>
             <option value='Dragonborn'>Dragonborn</option>
@@ -75,7 +116,7 @@ const NewBuild = () => {
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className='mb-3' controlId='formHorizontalHp'>
+      {/* <Form.Group as={Row} className='mb-3' controlId='formHorizontalHp'>
         <Form.Label column sm={2} className='d-flex align-items-center'>
           Character HP:
         </Form.Label>
@@ -86,16 +127,15 @@ const NewBuild = () => {
             placeholder='Your class of {class} has a range of {x}-{y} hp. The average hp is {z}. Please enter {z} or roll a {dice} and enter your result.'
           />
         </Col>
-      </Form.Group>
+      </Form.Group> */}
 
-      <fieldset >
-        <Form.Group as={Row} className='mb-3' >
-        <Col sm={2}>
-          <Form.Label as='legend' column sm={2}>
-            STR
-          </Form.Label>
-
-        </Col>
+      <fieldset>
+        <Form.Group as={Row} className='mb-3'>
+          <Col sm={2}>
+            <Form.Label as='legend' column sm={2}>
+              STR
+            </Form.Label>
+          </Col>
           <Col sm={10} className='d-flex align-items-center'>
             <Form.Check
               inline

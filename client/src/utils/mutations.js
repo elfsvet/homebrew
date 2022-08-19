@@ -21,3 +21,21 @@ export const ADD_USER = gql`
     }
   }
 `
+export const ADD_CHARACTER = gql`
+  mutation Mutation($name: String!, $race: String!, $class: String!, $bio: String!, $strength: Int!, $dexterity: Int!, $constitution: Int!, $intelligence: Int!, $wisdom: Int!, $charisma: Int!) {
+  addCharacter(name: $name, race: $race, class: $class, bio: $bio, strength: $strength, dexterity: $dexterity, constitution: $constitution, intelligence: $intelligence, wisdom: $wisdom, charisma: $charisma) {
+    _id
+    name
+    class
+    race
+    bio
+    username
+    strength
+    dexterity
+    constitution
+    intelligence
+    wisdom
+    charisma
+  }
+}
+`
