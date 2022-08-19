@@ -45,7 +45,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Header />
-        <main className='py-3'>
+        <main className=''>
           <Container>
             <Routes>
               <Route path='/' element={<HomePage />} />
