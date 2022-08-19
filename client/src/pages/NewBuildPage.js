@@ -62,7 +62,6 @@ const handleFormSubmit = async (e) => {
             as='textarea'
             rows={3}
             placeholder='Tell us about your character!'
-            value={formState.bio}
           />
         </Col>
       </Form.Group>
