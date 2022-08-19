@@ -10,8 +10,8 @@ function Header() {
 
       <Navbar bg='light' expand='lg' className='mb-3'>
         <Container>
+            <Image src='./images/logo.png' alt='claudron' style={{marginRight: '1rem'}}/>
           <Navbar.Brand as={Link} to='/'>
-            <Image src='./images/logo.png' alt='claudron' />
             HOMEBREW
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
