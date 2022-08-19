@@ -23,6 +23,7 @@
   "homepage": "https://github.com/elfsvet/homebrew#readme",
   "dependencies": {
     "bootswatch": "^5.2.0",
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "stripe": "^10.2.0"
   }
 }

@@ -27,7 +27,8 @@ const BackGroundImage = () => {
           <Container style={{
             backgroundColor: 'rgb(256, 256, 256, 0.95)',
             maxWidth: '15rem',
-            borderRadius: '15px'
+            borderRadius: '15px',
+            boxShadow: '1px 2px 9px #ab19ff'
           }}>
             <h1>HOMEBREW</h1>
           </Container>

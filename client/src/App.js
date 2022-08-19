@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage'
 // RENAMED HomePage
 import HomePage from './pages/HomePage'
 import NewBuildPage from './pages/NewBuildPage'
+import PaymentPage from './pages/PaymentPage'
 import SignupPage from './pages/SignupPage'
 import ProfilePage from './pages/ProfilePage'
 import CharacterInfoPage from './pages/CharacterInfoPage'
@@ -55,6 +56,7 @@ function App() {
 
               </Route>
               <Route path='/newbuild' element={<NewBuildPage />} />
+              <Route path='/payment' element={<PaymentPage />} />
               <Route path='/profile'>
                 <Route path=':username' element={<ProfilePage />} />
                 <Route path='' element={<ProfilePage />} />
