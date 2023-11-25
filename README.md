@@ -37,13 +37,12 @@ Project is created with:
 
 ## Installation
 
-To open this project in vscode using git in Terminal/Git Bash:
+To run this project on your local machine:
 
-```
-cd in directory there you want to store your project
-git clone https://github.com/elfsvet/homebrew.git
-code .
-```
+- `git clone https://github.com/elfsvet/homebrew.git`
+- `cd homebrew`
+- `npm ci`
+- `npm start`
 
 ## Instructions
 
